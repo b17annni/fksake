@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, "E-Mail", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "This is dedicated for those few who needs a quickfix quote on the go.", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
             });
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 // Construct the URL for the Internet service
-                URL url = new URL("http://wwwlab.iit.his.se/b17annni/mp/hfj.json");
+                URL url = new URL("http://wwwlab.iit.his.se/b17annni/mp/boom.json");
 
                 // Create the request to the PHP-service, and open the connection
                 urlConnection = (HttpURLConnection) url.openConnection();
