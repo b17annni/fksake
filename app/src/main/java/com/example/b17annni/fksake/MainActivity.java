@@ -1,9 +1,8 @@
 package com.example.b17annni.fksake;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,23 +23,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static android.R.attr.start;
-
-
-// Create a new class, Mountain, that can hold your JSON data
-
-// Create a ListView as in "Assignment 1 - Toast and ListView"
-
-// Retrieve data from Internet service using AsyncTask and the included networking code
-
-// Parse the retrieved JSON and update the ListView adapter
-
-// Implement a "refresh" functionality using Android's menu system
 
 
 public class MainActivity extends AppCompatActivity {
@@ -59,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         String[] mountains = {"K2","Mount Rainier","Aconcagua"};
         List<String> listData = new ArrayList<String>(Arrays.asList(mountains));
         adapter = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
@@ -73,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), m.info(), Toast.LENGTH_LONG).show();
             }
         });
+
+
+
+
 
     }
 
@@ -98,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
     private class FetchData extends AsyncTask<Void,Void,String>{
 
@@ -190,12 +180,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 Log.e("mylog","E:"+e.getMessage());
             }
-
-            // This code executes after we have received our data. The String object o holds
-            // the un-parsed JSON string or is null if we had an IOException during the fetch.
-
-            // Implement a parsing code that loops through the entire JSON and creates objects
-            // of our newly created Mountain class.
         }
     }
 
