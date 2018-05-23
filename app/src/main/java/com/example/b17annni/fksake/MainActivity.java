@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private List<Mountain_class> myberg = new ArrayList<Mountain_class>();
+    private List<Qte_class> mybug = new ArrayList<Qte_class>();
     private ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +52,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        String[] mountains = {"K2","Mount Rainier","Aconcagua"};
-        List<String> listData = new ArrayList<String>(Arrays.asList(mountains));
+        String[] one = {"one","two","three"};
+        List<String> listData = new ArrayList<String>(Arrays.asList(one));
         adapter = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
-                R.id.my_item_textview,myberg);
+                R.id.my_item_textview,mybug);
         ListView myListView = (ListView)findViewById(R.id.myListView);
         myListView.setAdapter(adapter);
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Mountain_class m = myberg.get(position);
+                Qte_class m = mybug.get(position);
                 Toast.makeText(getApplicationContext(), m.info(), Toast.LENGTH_LONG).show();
             }
         });
@@ -176,20 +176,20 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int start=0;start<allaberg.length();start++){
                     JSONObject woow = allaberg.getJSONObject(start);
-                    int mountainid = woow.getInt("ID");
-                    String mountainname = woow.getString("name");
-                    String mountaintype = woow.getString("type");
-                    String mountaincompany = woow.getString("company");
-                    String mountainlocation = woow.getString("location");
-                    String mountaincategory = woow.getString("category");
-                    int mountainheight = woow.getInt("size");
-                    int mountaincost = woow.getInt("cost");
-                    String mountainauxdata = woow.getString("auxdata");
+                    int qid = woow.getInt("ID");
+                    String qname = woow.getString("name");
+                    String qtype = woow.getString("type");
+                    String qcompany = woow.getString("company");
+                    String qlocation = woow.getString("location");
+                    String qcategory = woow.getString("category");
+                    int qheight = woow.getInt("size");
+                    int qncost = woow.getInt("cost");
+                    String qauxdata = woow.getString("auxdata");
 
-                    Mountain_class m = new Mountain_class(mountainname,mountainlocation,mountainheight);
+                    Qte_class m = new Qte_class(qname,qlocation,qheight);
                     adapter.add(m);
 
-                    Log.d("mylog","forloopvarv "+start+mountainname);
+                    Log.d("mylog","forloopvarv "+start+qname);
                 }
             } catch (JSONException e) {
                 Log.e("mylog","E:"+e.getMessage());

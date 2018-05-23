@@ -1,22 +1,21 @@
 package com.example.b17annni.fksake;
 
 /**
- * Created by b17annni on 2018-05-20.
+ * Created by b17annni on 2018-05-23.
  */
 
-
-public class Mountain_class {
+public class Qte_class {
     private String name;
     private String location;
     private int height;
 
-    public Mountain_class (String inName, String inLocation, int inHeight){
+    public Qte_class (String inName, String inLocation, int inHeight){
         name=inName;
         location=inLocation;
         height=inHeight;
     }
 
-    public Mountain_class(String inName){
+    public Qte_class(String inName){
         name=inName;
         location="";
         height=-1;
@@ -25,7 +24,7 @@ public class Mountain_class {
     public String myStrings (){return name;}
     public String info(){
         String str=name;
-        str+="  ";
+        str+=" : ";
         str+=location;
         str+="  ";
         return str;
@@ -39,5 +38,4 @@ public class Mountain_class {
     public String toString() {
         return name;
     }
-
 }
